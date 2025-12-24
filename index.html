@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cubo Creativo | Studio de Diseño Perú</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <nav>
             <div class="logo">CUBO<span>CREATIVO</span></div>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links">
                 <li><a href="index.html" class="active">Inicio</a></li>
                 <li><a href="#">Proyectos</a></li>
                 <li><a href="#">Servicios</a></li>
@@ -26,10 +29,10 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Diseño con <span class="italic">esencia</span> para emprendedores peruanos.</h1>
-                <p>Ubicados en Lima, ayudamos a negocios locales a destacar con identidades visuales auténticas y estratégicas.</p>
+                <p>Ubicados en Lima, ayudamos a negocios locales a destacar con identidades visuales auténticas.</p>
                 <div class="btn-container">
                     <a href="#" class="btn-primary">Ver Portafolio</a>
-                    <a href="#" class="btn-secondary">Cotizar Proyecto</a>
+                    <a href="#" class="btn-secondary">Cotizar</a>
                 </div>
             </div>
         </section>
@@ -41,11 +44,11 @@
             </div>
             <div class="stat-item">
                 <h2>100%</h2>
-                <p>Trato Personalizado</p>
+                <p>Personalizado</p>
             </div>
             <div class="stat-item">
                 <h2>Lima</h2>
-                <p>Base de Operaciones</p>
+                <p>Base Local</p>
             </div>
         </section>
 
@@ -72,7 +75,6 @@
                 <span>Hecho en Perú</span>
                 <h2>Proyectos Destacados</h2>
             </div>
-            
             <div class="grid-container">
                 <div class="project-card">
                     <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1000&auto=format&fit=crop');"></div>
@@ -84,8 +86,8 @@
                 <div class="project-card">
                     <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1547949003-9792a18a2601?q=80&w=1000&auto=format&fit=crop');"></div>
                     <div class="project-info">
-                        <h4>E-commerce Accesorios</h4>
-                        <p>Diseño de Packaging</p>
+                        <h4>E-commerce</h4>
+                        <p>Packaging</p>
                     </div>
                 </div>
             </div>
@@ -94,7 +96,7 @@
         <section class="philosophy">
             <div class="phil-content">
                 <h2>Un estudio pequeño, <br><em>grandes ideas.</em></h2>
-                <p>En Cubo Creativo no somos una agencia masiva. Somos un equipo que se involucra en cada detalle para que tu marca no solo se vea bien, sino que cuente tu historia y conecte con tu público en el mercado peruano.</p>
+                <p>En Cubo Creativo nos involucramos en cada detalle para que tu marca cuente tu historia y conecte con tu público.</p>
                 <a href="#" class="text-link">Conoce nuestra historia →</a>
             </div>
             <div class="phil-image">
@@ -103,21 +105,30 @@
         </section>
     </main>
 
-   <footer>
-    <div class="footer-content">
-        <div class="footer-logo">CUBO<span>CREATIVO</span></div>
-        
-        <div class="footer-socials">
-            <a href="https://www.instagram.com/cubocreativo.studio" target="_blank" rel="noopener noreferrer" class="social-icon">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer" class="social-icon">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">CUBO<span>CREATIVO</span></div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/cubocreativo.studio" target="_blank" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2025 Cubo Creativo Studio. Perú.</p>
         </div>
-        <p class="copyright">&copy; 2025 Cubo Creativo Studio. Hecho con amor en Perú.</p>
-    </div>
-</footer>
+    </footer>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+    </script>
 </body>
 </html>
